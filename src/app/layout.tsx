@@ -9,8 +9,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'NextJS Base',
-  description: 'NextJS base setup'
+  title: 'Payload CMS Test',
+  description: 'Testing Payload headless CMS with Next.js.'
 };
 
 export default function RootLayout({

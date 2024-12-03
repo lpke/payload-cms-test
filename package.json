@@ -1,8 +1,8 @@
 {
-  "name": "next-base",
-  "version": "1.1.0",
-  "description": "A Sensible, Clean NextJS Base",
-  "repository": "github:lpke/next-base",
+  "name": "payload-cms-test",
+  "version": "1.0.0",
+  "description": "Next.js + Payload CMS Demo",
+  "repository": "github:lpke/payload-cms-test",
   "author": "Luke Perich <luke@lpdev.io> (https://lpdev.io)",
   "license": "UNLICENSED",
   "private": true,
