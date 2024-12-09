@@ -49,13 +49,16 @@
         "./src/app/(frontend)/_api/*"
       ],
       "@/payload/*": [
+        "./src/app/(payload)/*"
+      ],
+      "@payload/*": [
         "./src/payload/*"
+      ],
+      "@payload-config": [
+        "./src/payload/payload.config.ts"
       ],
       "@/*": [
         "./src/app/(frontend)/*"
-      ],
-      "@payload-config": [
-        "./src/payload.config.ts"
       ]
     }
   },
