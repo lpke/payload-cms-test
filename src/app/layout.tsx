@@ -1,7 +1,7 @@
+import Providers from '@/Providers';
 import '@/styles/globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import Providers from './Providers';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -10,7 +10,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Payload CMS Test',
-  description: 'Testing Payload headless CMS with Next.js.'
+  description: 'Testing Payload headless CMS with Next.js.',
 };
 
 export default function RootLayout({

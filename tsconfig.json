@@ -31,7 +31,7 @@
       "@/utils/*": ["./src/app/(frontend)/_utils/*"],
       "@/api/*": ["./src/app/(frontend)/_api/*"],
       "@/payload/*": ["./src/payload/*"],
-      "@/*": ["./src/app/*"]
+      "@/*": ["./src/app/(frontend)/*"]
     }
   },
   "include": [
