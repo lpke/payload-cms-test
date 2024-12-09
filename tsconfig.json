@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es2015",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "checkJs": true,
     "skipLibCheck": true,
@@ -23,15 +27,36 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["./src/app/(frontend)/_components/*"],
-      "@/hooks/*": ["./src/app/(frontend)/_hooks/*"],
-      "@/routes/*": ["./src/app/(frontend)/(routes)/*"],
-      "@/styles/*": ["./src/app/(frontend)/_styles/*"],
-      "@/types/*": ["./src/app/(frontend)/_types/*"],
-      "@/utils/*": ["./src/app/(frontend)/_utils/*"],
-      "@/api/*": ["./src/app/(frontend)/_api/*"],
-      "@/payload/*": ["./src/payload/*"],
-      "@/*": ["./src/app/(frontend)/*"]
+      "@/components/*": [
+        "./src/app/(frontend)/_components/*"
+      ],
+      "@/hooks/*": [
+        "./src/app/(frontend)/_hooks/*"
+      ],
+      "@/routes/*": [
+        "./src/app/(frontend)/(routes)/*"
+      ],
+      "@/styles/*": [
+        "./src/app/(frontend)/_styles/*"
+      ],
+      "@/types/*": [
+        "./src/app/(frontend)/_types/*"
+      ],
+      "@/utils/*": [
+        "./src/app/(frontend)/_utils/*"
+      ],
+      "@/api/*": [
+        "./src/app/(frontend)/_api/*"
+      ],
+      "@/payload/*": [
+        "./src/payload/*"
+      ],
+      "@/*": [
+        "./src/app/(frontend)/*"
+      ],
+      "@payload-config": [
+        "./src/payload.config.ts"
+      ]
     }
   },
   "include": [
@@ -46,5 +71,7 @@
     ".eslintrc.*",
     "prettier.config.*"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
