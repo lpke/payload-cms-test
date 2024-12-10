@@ -46,6 +46,8 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'off',
     'no-underscore-dangle': 'off',
     '@next/next/no-img-element': 'off',
+    'consistent-return': 'off',
+    'no-param-reassign': 'off',
     // downgrades from error to warn
     'prefer-const': 'warn',
     'spaced-comment': 'warn',
