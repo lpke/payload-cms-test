@@ -121,6 +121,14 @@ module.exports = {
         '@typescript-eslint/no-explicit-any': 'off',
       },
     },
+    // payload-specific ignores
+    {
+      files: ['src/app/(payload)/*', 'src/payload/*'],
+      rules: {
+        'import/extensions': 'off',
+        'lines-around-directive': 'off',
+      },
+    },
     // if using storybook, uncomment below to prevent issues
     // {
     //   files: ["*.stories.tsx"],
