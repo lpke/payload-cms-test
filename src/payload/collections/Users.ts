@@ -1,3 +1,4 @@
+import { isAdmin } from '@payload/utils/roles';
 import type { CollectionConfig } from 'payload';
 
 export const Users: CollectionConfig = {
@@ -17,5 +18,33 @@ export const Users: CollectionConfig = {
       required: true,
       defaultValue: 'user',
     },
+    {
+      name: 'owned_games',
+      type: 'array',
+      fields: [
+        {
+          name: 'owned_game',
+          type: 'group',
+          fields: [
+            {
+              name: 'game',
+              type: 'relationship',
+              relationTo: 'games',
+              required: true,
+            },
+            {
+              name: 'rating',
+              type: 'number',
+            },
+          ],
+        },
+      ],
+    },
   ],
+  access: {
+    read: () => true,
+    create: isAdmin,
+    update: isAdmin,
+    delete: isAdmin,
+  },
 };
