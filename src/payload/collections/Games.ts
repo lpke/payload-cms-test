@@ -1,4 +1,5 @@
-import { isAdmin, isAdminOrCreatedBy } from '@payload/utils/roles';
+import isAdminOrCreatedBy from '@payload/access/isAdminOrCreatedBy';
+import { hasRoles } from '@payload/access/roleCheck';
 import type { CollectionConfig } from 'payload';
 
 export const Games: CollectionConfig = {
@@ -15,7 +16,9 @@ export const Games: CollectionConfig = {
       name: 'cost',
       type: 'number',
       access: {
-        update: isAdmin,
+        // FIXME
+        // @ts-ignore
+        update: hasRoles(['super-admin']),
       },
     },
     {

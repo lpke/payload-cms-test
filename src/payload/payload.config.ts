@@ -9,6 +9,7 @@ import sharp from 'sharp';
 
 import { Users } from '@payload/collections/Users';
 import { Games } from '@payload/collections/Games';
+import { Tenants } from '@payload/collections/Tenants';
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -20,7 +21,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Games],
+  collections: [Tenants, Users, Games],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

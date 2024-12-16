@@ -1,9 +1,12 @@
-export const isAdmin = ({ req: { user } }: any) =>
-  user && user.role === 'admin';
+import type { AccessResult, PayloadRequest } from 'payload';
 
-export const isAdminOrCreatedBy = ({ req: { user } }: any) => {
-  // Scenario #1 - Check if user has the 'admin' role
-  if (user && user.role === 'admin') {
+export default function isAdminOrCreatedBy({
+  req: { user },
+}: {
+  req: PayloadRequest;
+}): AccessResult {
+  // Scenario #1 - Check if user has the 'super-admin' role
+  if (user && user.roles.includes('super-admin')) {
     return true;
   }
 
@@ -19,4 +22,4 @@ export const isAdminOrCreatedBy = ({ req: { user } }: any) => {
 
   // Scenario #3 - Disallow all others
   return false;
-};
+}

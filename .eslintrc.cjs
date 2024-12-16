@@ -48,6 +48,7 @@ module.exports = {
     '@next/next/no-img-element': 'off',
     'consistent-return': 'off',
     'no-param-reassign': 'off',
+    'prefer-destructuring': 'off',
     // downgrades from error to warn
     'prefer-const': 'warn',
     'spaced-comment': 'warn',

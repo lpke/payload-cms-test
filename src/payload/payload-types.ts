@@ -11,6 +11,7 @@ export interface Config {
     users: UserAuthOperations;
   };
   collections: {
+    tenants: Tenant;
     users: User;
     games: Game;
     'payload-locked-documents': PayloadLockedDocument;
@@ -19,6 +20,7 @@ export interface Config {
   };
   collectionsJoins: {};
   collectionsSelect: {
+    tenants: TenantsSelect<false> | TenantsSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     games: GamesSelect<false> | GamesSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
@@ -59,11 +61,23 @@ export interface UserAuthOperations {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tenants".
+ */
+export interface Tenant {
+  id: number;
+  name: string;
+  slug: string;
+  public?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".
  */
 export interface User {
   id: number;
-  role: 'admin' | 'user';
+  roles: ('super-admin' | 'user')[];
   owned_games?:
     | {
         owned_game: {
@@ -103,6 +117,10 @@ export interface Game {
 export interface PayloadLockedDocument {
   id: number;
   document?:
+    | ({
+        relationTo: 'tenants';
+        value: number | Tenant;
+      } | null)
     | ({
         relationTo: 'users';
         value: number | User;
@@ -155,10 +173,21 @@ export interface PayloadMigration {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tenants_select".
+ */
+export interface TenantsSelect<T extends boolean = true> {
+  name?: T;
+  slug?: T;
+  public?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users_select".
  */
 export interface UsersSelect<T extends boolean = true> {
-  role?: T;
+  roles?: T;
   owned_games?:
     | T
     | {

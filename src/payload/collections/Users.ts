@@ -1,4 +1,4 @@
-import { isAdmin } from '@payload/utils/roles';
+import { hasRoles } from '@payload/access/roleCheck';
 import type { CollectionConfig } from 'payload';
 
 export const Users: CollectionConfig = {
@@ -9,14 +9,15 @@ export const Users: CollectionConfig = {
   auth: true,
   fields: [
     {
-      name: 'role',
+      name: 'roles',
       type: 'select',
+      defaultValue: ['user'],
       options: [
-        { label: 'Admin', value: 'admin' },
+        { label: 'Super Admin', value: 'super-admin' },
         { label: 'User', value: 'user' },
       ],
       required: true,
-      defaultValue: 'user',
+      hasMany: true,
     },
     {
       name: 'owned_games',
@@ -43,8 +44,8 @@ export const Users: CollectionConfig = {
   ],
   access: {
     read: () => true,
-    create: isAdmin,
-    update: isAdmin,
-    delete: isAdmin,
+    create: hasRoles(['super-admin']),
+    update: hasRoles(['super-admin']),
+    delete: hasRoles(['super-admin']),
   },
 };
