@@ -16,3 +16,5 @@ export function hasSomeRoles(partialRoles: User['roles']): Access<User> {
     return partialRoles.some((partialRole) => roles.includes(partialRole));
   };
 }
+
+export const isSuperAdmin = hasRoles(['super-admin']);

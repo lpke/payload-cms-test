@@ -1,4 +1,4 @@
-import { hasRoles } from '@payload/access/roleCheck';
+import { isSuperAdmin } from '@payload/access/roleCheck';
 import type { CollectionConfig } from 'payload';
 
 export const Users: CollectionConfig = {
@@ -44,8 +44,8 @@ export const Users: CollectionConfig = {
   ],
   access: {
     read: () => true,
-    create: hasRoles(['super-admin']),
-    update: hasRoles(['super-admin']),
-    delete: hasRoles(['super-admin']),
+    create: isSuperAdmin,
+    update: isSuperAdmin,
+    delete: isSuperAdmin,
   },
 };
