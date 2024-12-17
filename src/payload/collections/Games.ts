@@ -16,7 +16,6 @@ export const Games: CollectionConfig = {
       name: 'cost',
       type: 'number',
       access: {
-        // FIXME
         update: isSuperAdmin,
       },
     },
